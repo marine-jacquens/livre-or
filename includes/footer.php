@@ -9,7 +9,7 @@
                         <a href='index.php'>Accueil</a>
                         <a href='profil.php'>Profil</a>
                         <a href='livre-or.php'>Livre d'or</a>
-                        <a href='index.php'>Deconnexion</a>
+                        <a href='deconnexion.php'>Deconnexion</a>
                 ";
                 }else{
                     echo"

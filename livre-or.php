@@ -7,64 +7,43 @@
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="stylesheet" href="fontawesome/all.css">
     </head>
-    <body>
+    <body class="body-livreor">
         <header>
             <?php include("includes/header.php")?>
         </header>
-        <main>
+        <main class="content main-livreor">
             <?php 
-                if(isset($_SESSION['login'])){
-                    
+                if(isset($_SESSION['login'])){              
                     $db=mysqli_connect('localhost','root','','livreor');
-                    $requete1="SELECT date FROM commentaires ORDER by date DESC";
-                    $execution1=mysqli_query($db,$requete1);
-                    $date=mysqli_fetch_all($execution1);
-                    
-                    $requete2="SELECT commentaire FROM commentaires ORDER by date DESC";
-                    $execution2=mysqli_query($db,$requete2);
-                    $commentaire=mysqli_fetch_all($execution2);
-                    
-                    $requete3="SELECT login FROM utilisateurs INNER JOIN commentaires ON utilisateurs.id = commentaires.id_utilisateur ORDER BY date DESC";
-                    $execution3=mysqli_query($db,$requete3);
-                    $login = mysqli_fetch_all($execution3);
-                }
+                    $requete="SELECT date,commentaire,login FROM commentaires, utilisateurs WHERE  commentaires.id_utilisateur = utilisateurs.id ORDER BY date DESC";
+                    $execution=mysqli_query($db,$requete);
+                    $recuperation=mysqli_fetch_all($execution);
+                }else{header('location:connexion.php');}
             ?>
             
             <section class="commentaire">
-                <div>
-                     <?php
-                    foreach($date as $key => $value){
-                        foreach ($value as $key2=>$value2){ 
-                        echo "Posté le " .$value2. '</p><br/><br/>';
-                        }
-                    }
-                    ?> 
-                </div>
-                <div>
-                     <?php
-                    foreach($login as $key => $value){
-                        foreach ($value as $key2=>$value2){ 
-                        echo "Par " .$value2. '</p><br/><br/>';
-                        }
-                    }
-                    ?> 
-                </div>
-                <div>
-                     <?php
-                    foreach($commentaire as $key => $value){
-                        foreach ($value as $key2=>$value2){ 
-                        echo $value2. '</p><br/><br/>';
-                        }
-                    }
-                    ?> 
-                </div>
-                
-            </section>
-            
-            
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="date">Date&Heure : Post</th>      
+                            <th class="message">Vos témoignages</th>               
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach($recuperation as $commentaire){?>
+                        <tr>
+                            <td class="date"><?php echo $commentaire[0] ?></td>
+                            <td class="message"><?php echo '<p class="main-message">"'.$commentaire[1].' "</p><p class="signature"> Par : '.$commentaire[2].'</p>' ?></td>
+                        </tr><?php } ?>
+                    </tbody>
+                </table>
+            </section>          
+
         </main>
         <footer>
             <?php include("includes/footer.php")?>
         </footer>
     </body>
 </html>
+
+

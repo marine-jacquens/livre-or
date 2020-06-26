@@ -7,22 +7,13 @@
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="stylesheet" href="fontawesome/all.css">
     </head>
-    <body>
+    <body class="body-inscription">
         <header>
             <?php include("includes/header.php")?>
         </header>
-        <main>
-            <form action="" method="post">
-                <label for="login">Login</label><br>
-                <input type="text" name="login" placeholder="Entrez votre login"><br>
-                <label for="password">Mot de passe</label><br>
-                <input type="password" name="password"><br>
-                <label for="password">Confirmation de mot de passe</label><br>
-                <input type="password" name="password_check"><br>
-                <input type=submit name="submit" value="VALIDER">
-            </form>
-            
-            <?php 
+        <main class="main-inscription content">
+            <form action="" method="post" class="form-inscription">
+                <?php 
                 if(isset($_POST['submit'])){
                     $login=$_POST['login'];
                     $password=$_POST['password'];
@@ -35,16 +26,37 @@
                             
                             $db=mysqli_connect('localhost','root','','livreor');
                             if(!$db){die('Error:'.mysql_error());}
-                            $requete="INSERT into utilisateurs (login,password) VALUES ('$login','$password_hash')";
-                            $execution=mysqli_query($db,$requete);
                             
-                            header('location:connexion.php');
-                        }else{echo 'Les mots de passe doivent être identiques';}
+                            $requete1="SELECT * FROM utilisateurs WHERE login = '$login' ";
+                            $execution1 = mysqli_query($db,$requete1);
+                            $recuperation1 = mysqli_fetch_array($execution1);
+                            
+                            
+                            
+                            if ($login !=  $recuperation1['login']){
+                                $requete2="INSERT into utilisateurs (login,password) VALUES ('$login','$password_hash')";
+                                $execution2=mysqli_query($db,$requete2);
+                                header('location:connexion.php');
+                                
+                            }else {echo'<span>Ce login existe déjà</span>';}
+                            
+                        }else{echo '<span>Les mots de passe doivent être identiques</span>';}
                         
-                    }else{echo 'Veuillez remplir tous les champs';}
+                    }else{echo '<span>Veuillez remplir tous les champs</span>';}
                 }
-            
+      
             ?>
+                <h1>INSCRIPTION</h1>
+                <label for="login">Login</label><br>
+                <input type="text" name="login" placeholder="Entrez votre login"><br>
+                <label for="password">Mot de passe</label><br>
+                <input type="password" name="password"><br>
+                <label for="password">Confirmation de mot de passe</label><br>
+                <input type="password" name="password_check"><br>
+                <input type=submit name="submit" value="VALIDER">
+            </form>
+            
+            
         </main>
         <footer>
             <?php include("includes/footer.php")?>

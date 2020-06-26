@@ -11,7 +11,7 @@
         <header>
             <?php include("includes/header.php") ?>
         </header>
-        <main class="main-connexion">
+        <main class="main-connexion content">
             <form action="" method="post" class="form-connexion">
                 <?php 
                 if(isset($_POST['submit'])){
