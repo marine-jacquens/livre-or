@@ -50,9 +50,9 @@
                 <label for="login">Login</label><br>
                 <input type="text" name="login" placeholder="Entrez votre login"><br>
                 <label for="password">Mot de passe</label><br>
-                <input type="password" name="password"><br>
+                <input type="password" name="password" placeholder="Entrez votre mot de passe"><br>
                 <label for="password">Confirmation de mot de passe</label><br>
-                <input type="password" name="password_check"><br>
+                <input type="password" name="password_check" placeholder="Confirmez votre mot de passe"><br>
                 <input type=submit name="submit" value="VALIDER">
             </form>
             

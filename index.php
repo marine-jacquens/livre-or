@@ -11,17 +11,28 @@
     <body class="body-index">
         <header>
             <?php include("includes/header.php");?>
-            
+
             
         </header>
         <main class="content main-index">
+            <section class="section-presentation">
+                 <div class='paragraphe'>
+                     
+                    <h1>Bienvenue sur Paradisio</h1>
+                    <h2>Le blog des destinations de rêve</h2>
+                    <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed faucibus lorem. In dapibus, dui quis ultrices viverra, dui eros rhoncus massa, quis dictum ante sapien ut nunc. Etiam sed felis id quam blandit tincidunt vitae sed sem. Integer sit amet tristique leo. Aliquam dapibus bibendum aliquam. Sed suscipit rhoncus leo luctus consequat. Morbi vitae turpis quis ex rhoncus commodo id fermentum ante. Aenean sollicitudin congue velit, sed dignissim lorem porta aliquam. Nunc pretium odio magna, vitae aliquet neque volutpat nec.
+                    </p>
+
+                </div>
+            </section>
             <section class="section-articles">
-                <h1>Découvrez les recommendations de Paradisio</h1>
+                <h1>Découvrez nos recommendations </h1>
                 <article class="articles">
                     
                     <article class="article">
                         <h2>
-Thaïlande -  Patong Hôtel 4</h2>
+Thaïlande -  Patong Hôtel </h2>
                         <div>
                             <img src="css/images/hotel.jpg" alt="hotel">
                         </div>
@@ -33,9 +44,9 @@ Thaïlande -  Patong Hôtel 4</h2>
                     </article>
                     <article class="article">
                          <h2>
-Thaïlande -  Patong Hôtel 4</h2>
+Thaïlande -  Chrambre Patong Hotel</h2>
                         <div>
-                            <img src="css/images/hotel.jpg" alt="hotel">
+                            <img src="css/images/chambre.jpg" alt="hotel">
                         </div>
                         <div>
                             <p>
@@ -47,9 +58,9 @@ Thaïlande -  Patong Hôtel 4</h2>
                 <article class="articles">
                     <article class="article">
                          <h2>
-Thaïlande -  Patong Hôtel 4</h2>
+Thaïlande -  Patong Beach</h2>
                         <div>
-                            <img src="css/images/hotel.jpg" alt="hotel">
+                            <img src="css/images/plage.jpg" alt="plage">
                         </div>
                         <div>
                             <p>
@@ -59,9 +70,9 @@ Thaïlande -  Patong Hôtel 4</h2>
                     </article>
                     <article class="article">
                          <h2>
-Thaïlande -  Patong Hôtel 4</h2>
+Thaïlande -  Patong idées sorties</h2>
                         <div>
-                            <img src="css/images/hotel.jpg" alt="hotel">
+                            <img src="css/images/activite.jpg" alt="sortie Patong">
                         </div>
                         <div>
                             <p>
@@ -85,14 +96,14 @@ Thaïlande -  Patong Hôtel 4</h2>
                 </p></<div>";
                 }else{echo"
                 <div class='titre'> 
-                    <h1>Partagez vos souvenirs dans notre livre d'or. <br><br>Inscrivez-vous ou connectez vous </h1>
+                    <h1>Partagez vos souvenirs de vacances dans notre livre d'or. <br><br>Inscrivez-vous ou connectez vous </h1>
                 </div>
                 <div class='paragraphe'>
                 <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed faucibus lorem. In dapibus, dui quis ultrices viverra, dui eros rhoncus massa, quis dictum ante sapien ut nunc. Etiam sed felis id quam blandit tincidunt vitae sed sem. Integer sit amet tristique leo. Aliquam dapibus bibendum aliquam. Sed suscipit rhoncus leo luctus consequat. Morbi vitae turpis quis ex rhoncus commodo id fermentum ante. Aenean sollicitudin congue velit, sed dignissim lorem porta aliquam. Nunc pretium odio magna, vitae aliquet neque volutpat nec.
                 </p>
                 <br>
-                <a href='inscription.php'>Inscription</a>
+                <button><a href='inscription.php'>Inscription</a></button>
                 
                 </div>
                 
@@ -101,7 +112,7 @@ Thaïlande -  Patong Hôtel 4</h2>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed faucibus lorem. In dapibus, dui quis ultrices viverra, dui eros rhoncus massa, quis dictum ante sapien ut nunc. Etiam sed felis id quam blandit tincidunt vitae sed sem. Integer sit amet tristique leo. Aliquam dapibus bibendum aliquam. Sed suscipit rhoncus leo luctus consequat. Morbi vitae turpis quis ex rhoncus commodo id fermentum ante. Aenean sollicitudin congue velit, sed dignissim lorem porta aliquam. Nunc pretium odio magna, vitae aliquet neque volutpat nec.
                 </p>
                 <br>
-                <a href='connexion'>Connexion</a>
+                 <button><a href='connexion'>Connexion</a></button>
                 </div>
                 ";}
                 
@@ -112,7 +123,7 @@ Thaïlande -  Patong Hôtel 4</h2>
             
                 
             
-            
+           
         </main>
         <footer>
             <?php include("includes/footer.php")?>

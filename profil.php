@@ -45,7 +45,7 @@
 
                                 header('location:deconnexion');  
                                 }
-                            }else{echo'<span>Veuillez remplir le champs login</span>';}
+                            }
 
                         if($password && $password_check){
                             if($password == $password_check){
@@ -55,7 +55,7 @@
                                 header('location:deconnexion');  
 
                             }else{echo'<span>Vos mots de passe doivent être identiques</span>';}
-                        }else{echo'<span>Veuillez remplir tous les champs</span>';}
+                        }else{echo'<span>Remplissez le(s) champs login et/ou mot de passe et confirmation mot de passe </span>';}
 
                     }
                     
@@ -66,9 +66,9 @@
                 <label for="login">Login</label><br>
                 <input type="text" name="login" value="<?php echo $recuperation1['login'] ?>"><br>
                 <label for="password">Mot de passe</label><br>
-                <input type="password" name="password"><br>
+                <input type="password" name="password" placeholder="Entrez votre nouveau mot de passe"><br>
                 <label for="password_check">Confirmation mot de passe</label><br>
-                <input type="password" name="password_check"><br>
+                <input type="password" name="password_check" placeholder="Confirmez votre mot de passe"><br>
                 <input type="submit" name="submit" value="VALIDER">
             </form>
         </main>

@@ -45,6 +45,94 @@ a {
 /****TRONC COMMUN****/
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
+.main-connexion, .main-profil,.main-inscription{
+    display: flex;
+    justify-content: center;
+}
+
+.body-connexion,.body-profil,.body-inscription{
+    background-size:contain;
+}
+
+
+.form-connexion,.form-profil,.form-inscription{
+    padding:3%;
+    margin-top:10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:30%;
+    color:white;
+}
+
+.form-connexion h1,
+.form-connexion label,
+.form-profil h1,
+.form-profil label,
+.form-inscription h1,
+.form-inscription label{text-align: center;}
+
+.form-connexion input[type="text"],
+.form-profil input[type="text"],
+.form-inscription input[type="text"],
+.form-connexion input[type="password"],
+.form-profil input[type="password"],
+.form-inscription input[type="password"]{
+    padding:1%;
+    width:100%;
+    height:30px;
+}
+
+.form-connexion input[type="text"],
+.form-profil input[type="text"],
+.form-inscription input[type="text"],
+.form-connexion input[type="password"],
+.form-profil input[type="password"],
+.form-inscription input[type="password"],
+.form-connexion input[type="submit"],
+.form-profil input[type="submit"],
+.form-inscription input[type="submit"]{
+    border-radius:5px;
+    border:0.1px solid lightgray;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+
+
+
+.form-connexion input[type="submit"],
+.form-inscription input[type="submit"],
+.form-profil input[type="submit"]{
+    width:25%;
+}
+
+
+.form-connexion input[type="submit"],
+.form-inscription input[type="submit"],
+.form-profil input[type="submit"],
+.form-commentaire input[type="submit"]{
+    padding:2%;
+    background-color:#333;
+    color:white;
+    outline-color:#987316;
+}
+
+.form-connexion input[type="submit"]:hover,
+.form-profil input[type="submit"]:hover,
+.form-inscription input[type="submit"]:hover,
+.form-commentaire input[type="submit"]:hover{
+    background-color:#987316;
+    border:1px solid white;
+    transition:1s;
+}
+
+.form-connexion span,
+.form-profil span, 
+.form-inscription span,
+.form-commentaire span{
+    color:red;
+}
 
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
@@ -140,14 +228,37 @@ nav .logo:hover{
 }
 
 
-
-
-
-
-
 /***RESPONSIVE HEADER + FOOTER***/
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
+
+@media (max-width:800px) {
+    
+    .categorie1,.categorie2{
+        font-size:13px;
+    }
+    
+    nav .logo{
+        font-size:20px;
+    }
+    
+    .footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .footer .menu,.footer .logo, .footer .RS{
+        width:100%;
+        align-items: center;
+    }
+    
+    .footer .menu, .footer .logo{
+        justify-content: space-around;
+    }
+    
+    .footer .menu{margin-bottom:5%;}
+}
 
 
 /*** INDEX ***/
@@ -164,11 +275,13 @@ nav .logo:hover{
 .banniere{
     display:flex;
     justify-content: center;
-    align-items: center;
-    background:url(https://i.pinimg.com/originals/43/ec/64/43ec643e415690208f5d933cf9dcef84.jpg) center fixed;
+    align-items: center; 
+    background:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSyd7IVfNZEtpPiIuS4mM0em8rJGivNre6dqQ&usqp=CAU) center fixed;
+    background-size:cover;
+
     width:100%;
     color:white;
-    height:500px;
+    height:400px;
 }
 
 /*** Main ***/
@@ -176,8 +289,28 @@ nav .logo:hover{
 .main-index{
  font-weight:bold;
 }
+
+.section-presentation h1,
+.section-presentation h2{
+    text-align: center;
+    font-family: 'Caveat Brush', cursive;
+    margin:0;
+}
+
+.section-presentation h1{
+    font-size:50px;
+}
+
+
+.section-presentation h2{
+    font-size:30px;
+}
+
+.section-presentation p{
+    text-align: justify;
+}
+
 .section-articles {
-    
     display: flex;
     flex-direction:column;
     justify-content: center;
@@ -186,7 +319,11 @@ nav .logo:hover{
     background-color: rgba(255,255,255,0.7);
 }
 
-.section-articles h1{text-align: center;}
+.section-articles h1{
+    text-align: center;
+    font-family: 'Caveat Brush', cursive;
+    font-size:30px;
+}
 
 .articles{
     display: flex;
@@ -202,25 +339,31 @@ nav .logo:hover{
     text-align: justify;
 }
 
-.section-commentaire{
+.article h2{
+    font-family: 'Caveat Brush', cursive;
+    text-align: center;
+}
+
+.section-commentaire, .section-presentation{
     display: flex;
     justify-content: space-around;
     margin-top:5%;
     margin-bottom:5%;
     background-color:rgba(218,165,32,0.7);
     padding:5%;
-    text-align: justify;
     color:white;
 }
 
 .commentaire-form,.commentaire-paragraphe{
     width:45%;
-    
 }
-
 
 .commentaire-paragraphe{
     text-align: justify;
+}
+
+.commentaire-paragraphe h1{
+    font-family: 'Caveat Brush', cursive;
 }
 
 textarea{
@@ -240,13 +383,16 @@ textarea{
 
 .section-commentaire .paragraphe{
     width:30%;
+    text-align: justify;
 }
 
-.section-commentaire a {
+.section-commentaire button {
     background-color: rgba(0,0,0,0.7);
     border-radius:30px;
     padding:2%;
     color:white;
+    font-family: 'Montserrat', sans-serif;
+    border:none;
 }
 
 .form-commentaire input[type="submit"]{
@@ -254,132 +400,80 @@ textarea{
     border: none;
     font-family: 'Montserrat', sans-serif;
 }
+
+
 /*** RESPONSIVE INDEX ***/
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+@media (max-width:800px){
+    .articles{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .article {
+        width:90%;
+    }
+    
+    .article h2{text-align:center;
+    }
+    
+    .section-commentaire{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .section-commentaire .titre,
+    .section-commentaire .paragraphe{
+        width:90%;
+    }
+    
+    .section-commentaire .titre{
+        text-align: center;
+    }
+    
+    .section-commentaire button{
+        margin-left:40%;
+    }
+    
+    .commentaire-form{
+        width:90%;
+    }
+    
+    .commentaire-paragraphe{
+        display: none;
+    }
+}
 
 
 /****INSCRIPTION****/
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-/***RESPONSIVE INSCRIPTION***/
-/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-
-
-
-/*** CONNEXION ***/
-/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-.body-connexion,.body-profil,.body-inscription{
-    background-size:contain;
-    overflow:hidden;
-}
-
-.body-connexion{
-    background:url('https://exploreids.com/wp-content/uploads/2020/01/polynesie.jpg') center fixed;
-}
-
-.body-inscription{background:url(https://cdn-s-www.estrepublicain.fr/images/8B29D48E-7CE1-4DB1-A4D6-F33605472768/NW_raw/ganesh-le-dieu-a-tete-d-elephant-cher-aux-hindous-est-egalement-venere-en-thailande-photo-dr-1592293524.jpg) center fixed;}
-
-.main-connexion, .main-profil,.main-inscription{
-    display: flex;
-    justify-content: center;
-}
-
-.form-connexion{
-    margin-bottom:8.5%;
-    background-color:rgba(0,0,0,0.6);
-}
 
 .form-inscription{
     margin-bottom:3.5%;
     background-color:rgba(0,0,0,0.6);
 }
-.form-profil{
-    margin-bottom:3%;
-    background-color:black;
-}
 
 
-.form-connexion,.form-profil,.form-inscription{
-    padding:3%;
-    margin-top:3%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width:30%;
-    color:white;
-}
-
-.form-connexion h1,
-.form-connexion label,
-.form-profil h1,
-.form-profil label,
-.form-inscription h1,
-.form-inscription label{text-align: center;}
-
-.form-connexion input[type="text"],
-.form-profil input[type="text"],
-.form-inscription input[type="text"],
-.form-connexion input[type="password"],
-.form-profil input[type="password"],
-.form-inscription input[type="password"]{
-    padding:1%;
-    width:100%;
-    height:30px;
-}
-
-.form-connexion input[type="text"],
-.form-profil input[type="text"],
-.form-inscription input[type="text"],
-.form-connexion input[type="password"],
-.form-profil input[type="password"],
-.form-inscription input[type="password"],
-.form-connexion input[type="submit"],
-.form-profil input[type="submit"],
-.form-inscription input[type="submit"]{
-    border-radius:5px;
-    border:0.1px solid lightgray;
-    font-family: 'Montserrat', sans-serif;
-    
-}
-
-
-
-.form-connexion input[type="submit"],
-.form-inscription input[type="submit"],
-.form-profil input[type="submit"]{
-    width:25%;
-}
-
-
-.form-connexion input[type="submit"],
-.form-inscription input[type="submit"],
-.form-profil input[type="submit"],
-.form-commentaire input[type="submit"]{
-    padding:2%;
-    background-color:#333;
-    color:white;
-    outline-color:#987316;
-}
-
-.form-connexion input[type="submit"]:hover,
-.form-profil input[type="submit"]:hover,
-.form-inscription input[type="submit"]:hover,
-.form-commentaire input[type="submit"]:hover{
-    background-color:#987316;
-    border:1px solid white;
-    transition:1s;
-}
-
-.form-connexion span,
-.form-profil span, 
-.form-inscription span,
-.form-commentaire span{
-    color:red;
-}
-
-/***RESPONSIVE CONNEXION***/
+/*** CONNEXION ***/
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+
+.body-connexion{
+    background:url('https://i.pinimg.com/originals/43/ec/64/43ec643e415690208f5d933cf9dcef84.jpg') center fixed;
+}
+
+.body-inscription{background:url(https://cdn-s-www.estrepublicain.fr/images/8B29D48E-7CE1-4DB1-A4D6-F33605472768/NW_raw/ganesh-le-dieu-a-tete-d-elephant-cher-aux-hindous-est-egalement-venere-en-thailande-photo-dr-1592293524.jpg) center fixed;}
+
+
+
+.form-connexion{
+    margin-bottom:10%;
+    background-color:rgba(0,0,0,0.6);
+}
 
 
 
@@ -390,9 +484,32 @@ textarea{
     background:url(images/livreor.jpg)center fixed;
 }
 
-/****RESPONSIVE PROFIL****/
+.form-profil{
+    margin-bottom:3%;
+    background-color:black;
+}
 
+
+
+/***RESPONSIVE INSCRIPTION/CONNEXION/PROFIL ***/
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+
+
+@media(max-width:950px){
+    .form-connexion{
+        margin-bottom:12%; 
+    }
+}
+
+@media(max-width:899px){
+    .form-connexion, .form-inscription, .form-profil{
+        width:70%;
+        padding:5%;
+        
+    }
+}
+
 
 
 
@@ -406,7 +523,7 @@ textarea{
 
 .commentaire{
     margin-top:5%;
-    margin-bottom:5%;
+    margin-bottom:30%;
     margin-right:5%;
     margin-left:5%;
 }
@@ -427,7 +544,7 @@ textarea{
     border:1px solid #DAA520;
 }
 
-th.date{
+th.date, td.date{
     background-color:#DAA520;
     color:white;
     border:1px solid white;
@@ -472,5 +589,17 @@ th.message{
 
 /**** LIVRE OR RESPONSIVE****/
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+@media (max-width:950px){
+    .signature{
+        width:20%;
+    }
+}
+
+@media (max-width:800px){
+    .signature{
+        width:30%;
+    }
+}
 
 
