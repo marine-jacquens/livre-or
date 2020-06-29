@@ -28,7 +28,7 @@ if(isset($_SESSION['login'])){
 
 ?>
     
-    <textarea type="textarea" placeholder="Ecrivez ce que vous voulez" name="commentaire"></textarea><br><br>
+    <textarea type="textarea" placeholder="Ecrivez librement ..." name="commentaire"></textarea><br><br>
     <input type="submit" name="submit" value="VALIDER">
 </form>
 
