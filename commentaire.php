@@ -10,7 +10,7 @@ if(isset($_SESSION['login'])){
     $id=mysqli_fetch_all($execution1);
     
     if(isset($_POST['submit'])){
-    $commentaire1 = $_POST['commentaire'];
+    $commentaire1 = htmlentities(trim($_POST['commentaire']));
     $commentaire2 = addslashes($commentaire1);
     
         if(!empty($commentaire1)){

@@ -25,9 +25,9 @@
                
             
                     if(isset($_POST['submit'])){
-                        $login=$_POST['login'];
-                        $password=$_POST['password']; 
-                        $password_check=$_POST['password_check']; $hash=password_hash($password,PASSWORD_BCRYPT,array('cost'=>10));
+                        $login=htmlentities(trim($_POST['login']));
+                        $password=htmlentities(trim())htmlentities(trim($_POST['password'])); 
+                        $password_check=htmlentities(trim($_POST['password_check'])); $hash=password_hash($password,PASSWORD_BCRYPT,array('cost'=>10));
                         $session=$_SESSION['login'];
                         
                         if($login){

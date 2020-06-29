@@ -15,8 +15,8 @@
             <form action="" method="post" class="form-connexion">
                 <?php 
                 if(isset($_POST['submit'])){
-                    $login=$_POST['login'];
-                    $password=$_POST['password'];
+                    $login=htmlentities(trim($_POST['login']));
+                    $password=htmlentities(trim($_POST['password']));
                     
                     if($login && $password){
                         

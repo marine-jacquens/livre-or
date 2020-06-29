@@ -15,9 +15,9 @@
             <form action="" method="post" class="form-inscription">
                 <?php 
                 if(isset($_POST['submit'])){
-                    $login=$_POST['login'];
-                    $password=$_POST['password'];
-                    $password_check=$_POST['password_check'];
+                    $login=htmlentities(trim($_POST['login']));
+                    $password=htmlentities(trim($_POST['password']));
+                    $password_check=htmlentities(trim($_POST['password_check']));
                     $password_hash = password_hash($password,PASSWORD_BCRYPT,array('cost'=>10));
                     
                     if($login && $password && $password_check){
